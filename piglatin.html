@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title></title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/sugar/1.3.9/sugar.min.js"></script>
+</head>
+<body>
+
+<h1>Piglatin Convertor</h1>
+<p>Please Input a word below:</p>
+<input id = "word" type="text" name="word">
+<input id = "button" type="submit" value="Submit">
+<p id = "converted"></p>
+
+<script>
+$('#button').click(function() {
+  var word = $('#word').val().toLowerCase();
+  var splited = word.split("");
+  var alpha = splited.findIndex(/[aeiou]/);
+   //console.log(alpha)
+
+  for (var i=0; i<alpha; i++){
+  splited.push(splited.shift());
+  }
+
+  arrWord = splited.join('') + 'ay';
+
+
+
+  $('#converted').text(arrWord);
+
+
+})
+
+
+</script>
+
+
+</body>
+</html>
